@@ -34,4 +34,40 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|password|string|null: false|
+|email|string|null: false|
+
+### Association
+- has_many :groups
+- has_many :messages
+- has_many :groups,through: :groups_users
+- has_many :groups_users
+
+## groupsテーブル
+
+ |Column|Type|Options|
+ |------|----|-------|
+ |name|string|null: false|
+
+ ### Association
+ - belongs_to :user
+ - has_many  :user,through: :groups_users
+ - has_many  :groups_users
+ - has_many :messages
+
+ ## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null :false|
+|image|string|null :false|
+
+### Association
+
+- belongs_to :user
+- belongs_to :message
