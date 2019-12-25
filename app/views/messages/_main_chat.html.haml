@@ -1,0 +1,25 @@
+.chat
+  .chat__group-info
+    .chat__group-info-box
+      .chat__group-info-box-name test
+      .chat__group-info-box-menber Menber:mesa
+    .chat__group-info-box-edit
+      = link_to "#" do
+        Edit
+  .chat__message-list
+    .chat__message-list-box
+      .chat__message-list-box-info
+        %p.chat__message-list-box-info-name D
+        %p.chat__message-list-box-info-date 2019/12/24(Tue) 21:42:21
+      .chat__message-list-box-text test1
+        
+
+  .chat__form
+    %form.chat__form-message
+      .input-box
+        %input.input-box-text{placeholder:"type a message",type: "text",}
+        %label.input-box-image{for:"message-image"}
+          = icon('fa', 'image')
+          %input.input-box-image-file{type:"file",id:"message-image"}
+      %input.submit-btn{type:"submit",value:"Send"}
+
