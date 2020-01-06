@@ -4,17 +4,19 @@
       .side-header__box__user-name
         = current_user.name
       .side-header__box__icon 
-        =link_to "#" do
+        = link_to new_group_path do
           = icon('fas', 'edit')
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'icon')
         
       
   .side__group
-    .side__group-list
-      .side__group-list-name
-        test
-      .side__group-list-message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .side__group-list
+        = link_to '#' , class:  'side__group-list'  do
+          .side__group-list-name
+            = group.name
+          .side__group-list-message
+            まだメッセージはありません
 
     
