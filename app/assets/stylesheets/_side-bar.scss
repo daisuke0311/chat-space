@@ -33,13 +33,17 @@ $font:white;
             color: $font;
             margin-bottom: 40px;
             text-decoration: none;
-              &-name{
-                font-size: 15px;
-                margin-bottom: 5px;
+              a{
+                color:$font;
+                text-decoration: none;
               }
-                &-message{
-                  font-size: 11px;
+                &-name{
+                  font-size: 15px;
+                  margin-bottom: 5px;
                 }
+                  &-message{
+                    font-size: 11px;
+                  }
           }
       }
   }
