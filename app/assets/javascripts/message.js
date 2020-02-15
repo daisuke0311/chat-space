@@ -16,7 +16,7 @@ $(function(){
              ${message.content}
            </p>
          </div>
-         <img src=${message.image.url} >
+         <img src=${message.image} >
        </div>`
      return html;
    } else {
@@ -52,6 +52,7 @@ $('#new_message').on('submit', function(e){
    contentType: false
  })
   .done(function(data){
+  console.log(data.image)
     var html = buildHTML(data);
     $('.chat__message-list').append(html);      
        $('form')[0].reset();
