@@ -1,4 +1,4 @@
-  console.log("aaa")
+
   function buildHTML(message){
    if ( message.image ) {
      var html =
@@ -57,7 +57,6 @@
  $(function(){ 
   var reloadMessages = function() {
     last_message_id = $('.chat__message-list-box:last').data("message-id");
-    console.log(last_message_id)
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -93,7 +92,6 @@
       contentType: false
     })
   .done(function(data){
-    // console.log(data)
     var html = buildHTML(data);
     $('.chat__message-list').append(html);      
        $('form')[0].reset();
