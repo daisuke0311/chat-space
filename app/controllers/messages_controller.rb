@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    @member = @group.users.flat_map(&:name)
   end
 
   def create

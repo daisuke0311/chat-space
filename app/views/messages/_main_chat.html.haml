@@ -5,7 +5,8 @@
         = @group.name
       .chat__group-info-box-menber 
         Menber:
-        = @member
+        - @group.users.flat_map(&:name).each do |member|
+          = member
 
     .chat__group-info-box-edit
       = link_to edit_group_path(@group.id), method: :get do
